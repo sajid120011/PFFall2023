@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int i=1,j=1,fSeries=0,sum=0;
+	printf("%d %d ",i,j);
+	while(fSeries<10000)
+	{
+		fSeries=i+j;
+		i=j;
+		j=fSeries;
+		printf("\n%d ",fSeries);
+		if((fSeries%3==0)||(fSeries%5==0)||(fSeries%7==0))
+		{
+			sum=sum+fSeries;
+			printf(" sum is: %d",sum);
+		}
+	}
+	return 0;
+}

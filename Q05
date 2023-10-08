@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	int matchsticks=21,player,computer;
+	while(matchsticks>0)
+	{
+		printf("Remaining matchsticks: %d\n ",matchsticks);
+		printf("Pick 1,2 ,3 or 4 matchsticks");
+		scanf("%d ",&player);
+		if(player<0 || player>4 || player>matchsticks)
+		{
+			printf("invalid pick, try again");
+		}
+		else
+		{
+		matchsticks=matchsticks-player;
+		printf("you picked %d matchsticks:\n ",player);
+		computer=5-player;
+		printf("computer picked:%d\n ",computer);
+		matchsticks=matchsticks-computer;
+			if(matchsticks==1)
+			{
+				printf("you lose, you picked last matchstick\n");
+			}
+	    }
+	}
+	return 0;
+}

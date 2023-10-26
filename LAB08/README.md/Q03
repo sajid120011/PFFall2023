@@ -1,0 +1,31 @@
+#include <stdio.h>
+int strchr(char str[], char target) 
+{
+    for (int i = 0; str[i] != '\0'; i++) 
+	{
+        if (str[i] == target) 
+		{
+            return i; 
+        }
+    }
+    return -99; 
+}
+int main() 
+{
+    char text[1000];
+    char target_Char;
+    printf("Enter a text: ");
+    scanf("%c",&text);
+    printf("Enter a character to search for: ");
+    scanf(" %c", &target_Char);
+    int result = strchr(text, target_Char);
+    if (result != -99) 
+	{
+        printf("'%c' found at position: %d\n", target_Char, result);
+    } 
+	else 
+	{
+        printf("'%c' not found in the text.\n", target_Char);
+    }
+    return 0;
+}

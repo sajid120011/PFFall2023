@@ -1,0 +1,29 @@
+#include <stdio.h>
+void calculateDiscount(float purchaseAmount, int visits) 
+{
+    if (purchaseAmount >= 50 && visits > 10) 
+	{
+        printf("15%% discount\n");
+        purchaseAmount = purchaseAmount - (purchaseAmount * 0.15);
+        printf("Amount after discount is %.2f\n", purchaseAmount); 
+    } 
+	else if (purchaseAmount >= 30 && visits > 5) 
+	{
+        printf("10%% discount\n");
+        purchaseAmount = purchaseAmount - (purchaseAmount * 0.10);
+        printf("Amount after discount is %.2f\n", purchaseAmount); 
+    } 
+	else 
+	{
+        printf("No discount!\n"); 
+    }
+}
+int main() 
+{
+    float purchaseAmount;
+    int visits;
+    printf("Enter the amount purchased and the number of visits in the past month: ");
+    scanf("%f %d", &purchaseAmount, &visits);
+    calculateDiscount(purchaseAmount, visits);
+    return 0;
+}
